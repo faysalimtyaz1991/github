@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+	
+	<head>
+		
+		<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
+	</head>
+
+
+
+	<body>
+		
+	<div id="results"></div>
+
+
+	<script>
+
+	$(document).ready(function(){
+		LoadData(0);
+	});
+		
+
+	function LoadData(pagenum){
+
+		$.post('index.php?p='+pagenum, function(reponse){
+
+			$('#results').html(reponse);
+
+		});
+
+	}
+
+
+	</script>
+
+	</body>
+
+</html>
